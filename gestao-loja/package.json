@@ -1,0 +1,10 @@
+{
+  "name": "gestao-loja",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "LUX Store - Gestão da Loja Front-End",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
+

@@ -1,0 +1,319 @@
+/* ==========================================================================
+   DESIGN SYSTEM - LUX STORE (React / meu-app)
+   Inspirado no visual Luxury Watch / Editorial Dark & Rose Gold (#e8ada4)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap');
+
+:root {
+  --bg-canvas: #0b0c10;
+  --bg-surface: #13141a;
+  --bg-surface-elevated: #1a1b23;
+  --bg-surface-card: rgba(19, 20, 26, 0.85);
+  --bg-input: rgba(255, 255, 255, 0.035);
+  --bg-input-focus: rgba(255, 255, 255, 0.06);
+
+  --accent-rose: #e8ada4;
+  --accent-rose-light: #f3c8c1;
+  --accent-rose-dark: #c98a7e;
+  --accent-rose-hover: #f0b8af;
+  --accent-rose-glow: rgba(232, 173, 164, 0.22);
+  --accent-rose-subtle: rgba(232, 173, 164, 0.1);
+
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-muted: #8e95a5;
+  --text-dark: #0c0d12;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(232, 173, 164, 0.35);
+
+  --radius-pill: 9999px;
+  --radius-card: 24px;
+  --radius-input: 14px;
+  --radius-btn: 9999px;
+
+  --shadow-card: 0 20px 45px -15px rgba(0, 0, 0, 0.75);
+  --shadow-btn: 0 10px 25px -5px rgba(232, 173, 164, 0.3);
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  background-color: var(--bg-canvas);
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(232, 173, 164, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(232, 173, 164, 0.04) 0%, transparent 40%);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.app-header {
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 20px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.app-header h1 {
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: var(--accent-rose-subtle);
+  color: var(--accent-rose-light);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-hover);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-style: italic;
+  font-weight: 300;
+  margin-top: 4px;
+}
+
+.tabs-nav {
+  display: inline-flex;
+  background: var(--bg-surface-card);
+  padding: 6px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 28px;
+  gap: 6px;
+  backdrop-filter: blur(12px);
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  padding: 10px 24px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tab-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn.active {
+  background: #ffffff;
+  color: #0b0c10;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+}
+
+.card {
+  background: var(--bg-surface-card);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  padding: 28px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-card);
+}
+
+.card h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px 16px;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-input);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  outline: none;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  background-color: var(--bg-input-focus);
+  border-color: var(--accent-rose);
+  box-shadow: 0 0 0 3px var(--accent-rose-subtle);
+}
+
+.form-group select option {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: var(--radius-btn);
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-rose) 0%, var(--accent-rose-dark) 100%);
+  color: var(--text-dark);
+  box-shadow: var(--shadow-btn);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--accent-rose-hover) 0%, var(--accent-rose) 100%);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--border-subtle);
+  color: var(--text-primary);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-hover);
+  color: var(--accent-rose-light);
+}
+
+.btn-danger {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+.btn-sm {
+  padding: 6px 14px;
+  font-size: 0.8rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+
+th,
+td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.92rem;
+}
+
+th {
+  background-color: var(--bg-surface-elevated);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+tr:hover {
+  background-color: rgba(232, 173, 164, 0.035);
+}
+
+.badge-status {
+  display: inline-flex;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-pago {
+  background: rgba(34, 197, 94, 0.14);
+  color: #86efac;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.badge-cancelado {
+  background: rgba(239, 68, 68, 0.14);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.item-builder {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px dashed var(--border-hover);
+  border-radius: 18px;
+  padding: 22px;
+  margin: 20px 0;
+}
+
+.total-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+  padding: 16px 22px;
+  background: linear-gradient(90deg, rgba(232, 173, 164, 0.08) 0%, rgba(20, 22, 28, 0.9) 100%);
+  border: 1px solid var(--border-hover);
+  border-radius: 16px;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.total-display strong {
+  color: var(--accent-rose);
+  font-size: 1.5rem;
+}
