@@ -1,0 +1,3 @@
+[build]
+  # Static site lives in gestao-loja/ (no build step required)
+  publish = "gestao-loja"
